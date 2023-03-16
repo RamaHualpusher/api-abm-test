@@ -1,0 +1,13 @@
+package com.example.apiabmtest;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ApiAbmTestApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ApiAbmTestApplication.class, args);
+	}
+
+}
