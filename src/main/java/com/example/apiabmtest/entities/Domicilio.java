@@ -1,8 +1,6 @@
 package com.example.apiabmtest.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +17,10 @@ public class Domicilio extends Base{
     private String calle;
     @Column(name = "numero")
     private int numero;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "fk_localidad")
+    private Localidad localidad;
 
 
 }

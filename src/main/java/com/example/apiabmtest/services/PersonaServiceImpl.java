@@ -6,6 +6,8 @@ import com.example.apiabmtest.repositories.PersonaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PersonaServiceImpl extends BaseServiceImpl<Persona,Long> implements PersonaService{
 
@@ -18,4 +20,14 @@ public class PersonaServiceImpl extends BaseServiceImpl<Persona,Long> implements
         super(baseRepository);
     }
 
+    @Override
+    public List<Persona> search(String filtro) throws Exception {
+        try{
+            return personaRepository.search(filtro);
+            //return personaRepository.findByNombreContainingOrApellidoContaining(filtro,filtro);
+            //return personaRepository.searchNativo(filtro);
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+    }
 }
